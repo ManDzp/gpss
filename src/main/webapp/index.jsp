@@ -1,19 +1,16 @@
-<%@ page import="com.lyyzoo.gpss.util.StringUtil" %>
-<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
-<!DOCTYPE html>
+<%--
+  Created by IntelliJ IDEA.
+  User: dd
+  Date: 2018/12/6
+  Time: 20:32
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <meta charset="ISO-8859-1">
-    <title>Insert title here</title>
+    <title>HelloWord</title>
 </head>
 <body>
-<form action="<%=request.getContextPath()%>/login" method="post">
-    <input type="text" name="username">
-    <input type="text" name="password">
-    <input type="submit" value="login">
-</form>
-
-<% String message = StringUtil.valueOf(request.getAttribute("error")); %>
-<%=message %>
+<a>Hello</a>
 </body>
 </html>

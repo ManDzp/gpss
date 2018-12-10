@@ -22,7 +22,7 @@ public class UserServiceController {
     private static Logger logger = LoggerFactory.getLogger(UserServiceController.class);
 
     @Autowired
-    UserService userService;
+    private UserService userService;
     //1.登录
     @RequestMapping(value = "login",method = RequestMethod.POST)
     @ResponseBody
