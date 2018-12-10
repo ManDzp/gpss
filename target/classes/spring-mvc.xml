@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- 自动扫描的包名 -->
+    <context:component-scan base-package="com.lyyzoo.gpss.control" ></context:component-scan>
+    <!-- 默认的注解映射的支持 -->
+    <mvc:annotation-driven />
+
+    <!-- 视图(JSP)解释类 -->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/"/>
+        <property name="suffix" value=".jsp"/>
+        <!--可为空,方便实现自已的依据扩展名来选择视图解释类的逻辑 -->
+        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
+    </bean>
+
+    <!-- 对静态资源文件的访问 方案二 （二选一）  有三种方案  可以激活Tomcat的defaultServlet来处理静态文件     -->
+    <mvc:resources mapping="/static/img/**" location="/static/img/" cache-period="31556926"/>
+    <mvc:resources mapping="/static/js/**" location="/static/js/" cache-period="31556926"/>
+    <mvc:resources mapping="/static/css/**" location="/static/css/" cache-period="31556926"/>
+
+    <!--声明式异常视图解析器 -->
+    <bean  class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+        <!-- 定义默认的异常处理页面   error  表示的视图的名称  -->
+        <property name="defaultErrorView" value="error"/>
+        <!-- 自定义需要特殊处理的异常，这是重要点 -->
+      <!--  <property name="exceptionMappings">
+            <props>
+                <prop key="org.lanqiao.exception.CustomException">customError</prop>
+                <prop key="org.lanqiao.exception.OrderException">orderError</prop>
+            </props>
+            &lt;!&ndash; 还可以定义其他的自定义异常 &ndash;&gt;
+        </property>-->
+        <!-- 省略日志-->
+    </bean>
+    <!--拦截器的 配置文件-->
+    <!-- <mvc:interceptors>
+         <mvc:interceptor>
+             &lt;!&ndash;要拦截的接口&ndash;&gt;
+             <mvc:mapping path="/*"/>
+             &lt;!&ndash;剔除不要拦截的接口&ndash;&gt;
+             <mvc:exclude-mapping path="/login"/>
+             <mvc:exclude-mapping path="/createArticle"/>
+             <mvc:exclude-mapping path="/allarticle"/>
+             <bean class="org.lanqiao.interceptor.AuthcInterceptor"></bean>
+         </mvc:interceptor>
+     </mvc:interceptors>-->
+
+</beans>

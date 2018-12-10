@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lyyzoo.gpss.mapper.LzStockMapper" >
+  <resultMap id="BaseResultMap" type="com.lyyzoo.gpss.moder.LzStock" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="goodsId" property="goodsid" jdbcType="INTEGER" />
+    <result column="repoId" property="repoid" jdbcType="INTEGER" />
+    <result column="totalCount" property="totalcount" jdbcType="INTEGER" />
+    <result column="saleCount" property="salecount" jdbcType="INTEGER" />
+    <result column="buyPrice" property="buyprice" jdbcType="DECIMAL" />
+    <result column="avgBuyPrice" property="avgbuyprice" jdbcType="DECIMAL" />
+    <result column="salePrice" property="saleprice" jdbcType="DECIMAL" />
+    <result column="totalBuyPrice" property="totalbuyprice" jdbcType="DECIMAL" />
+    <result column="totalSalePrice" property="totalsaleprice" jdbcType="DECIMAL" />
+    <result column="updatime" property="updatime" jdbcType="TIMESTAMP" />
+    <result column="state" property="state" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, goodsId, repoId, totalCount, saleCount, buyPrice, avgBuyPrice, salePrice, totalBuyPrice, 
+    totalSalePrice, updatime, state
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from lz_stock
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from lz_stock
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.lyyzoo.gpss.moder.LzStock" >
+    insert into lz_stock (id, goodsId, repoId, 
+      totalCount, saleCount, buyPrice, 
+      avgBuyPrice, salePrice, totalBuyPrice, 
+      totalSalePrice, updatime, state
+      )
+    values (#{id,jdbcType=INTEGER}, #{goodsid,jdbcType=INTEGER}, #{repoid,jdbcType=INTEGER}, 
+      #{totalcount,jdbcType=INTEGER}, #{salecount,jdbcType=INTEGER}, #{buyprice,jdbcType=DECIMAL}, 
+      #{avgbuyprice,jdbcType=DECIMAL}, #{saleprice,jdbcType=DECIMAL}, #{totalbuyprice,jdbcType=DECIMAL}, 
+      #{totalsaleprice,jdbcType=DECIMAL}, #{updatime,jdbcType=TIMESTAMP}, #{state,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.lyyzoo.gpss.moder.LzStock" >
+    insert into lz_stock
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="goodsid != null" >
+        goodsId,
+      </if>
+      <if test="repoid != null" >
+        repoId,
+      </if>
+      <if test="totalcount != null" >
+        totalCount,
+      </if>
+      <if test="salecount != null" >
+        saleCount,
+      </if>
+      <if test="buyprice != null" >
+        buyPrice,
+      </if>
+      <if test="avgbuyprice != null" >
+        avgBuyPrice,
+      </if>
+      <if test="saleprice != null" >
+        salePrice,
+      </if>
+      <if test="totalbuyprice != null" >
+        totalBuyPrice,
+      </if>
+      <if test="totalsaleprice != null" >
+        totalSalePrice,
+      </if>
+      <if test="updatime != null" >
+        updatime,
+      </if>
+      <if test="state != null" >
+        state,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="goodsid != null" >
+        #{goodsid,jdbcType=INTEGER},
+      </if>
+      <if test="repoid != null" >
+        #{repoid,jdbcType=INTEGER},
+      </if>
+      <if test="totalcount != null" >
+        #{totalcount,jdbcType=INTEGER},
+      </if>
+      <if test="salecount != null" >
+        #{salecount,jdbcType=INTEGER},
+      </if>
+      <if test="buyprice != null" >
+        #{buyprice,jdbcType=DECIMAL},
+      </if>
+      <if test="avgbuyprice != null" >
+        #{avgbuyprice,jdbcType=DECIMAL},
+      </if>
+      <if test="saleprice != null" >
+        #{saleprice,jdbcType=DECIMAL},
+      </if>
+      <if test="totalbuyprice != null" >
+        #{totalbuyprice,jdbcType=DECIMAL},
+      </if>
+      <if test="totalsaleprice != null" >
+        #{totalsaleprice,jdbcType=DECIMAL},
+      </if>
+      <if test="updatime != null" >
+        #{updatime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="state != null" >
+        #{state,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lyyzoo.gpss.moder.LzStock" >
+    update lz_stock
+    <set >
+      <if test="goodsid != null" >
+        goodsId = #{goodsid,jdbcType=INTEGER},
+      </if>
+      <if test="repoid != null" >
+        repoId = #{repoid,jdbcType=INTEGER},
+      </if>
+      <if test="totalcount != null" >
+        totalCount = #{totalcount,jdbcType=INTEGER},
+      </if>
+      <if test="salecount != null" >
+        saleCount = #{salecount,jdbcType=INTEGER},
+      </if>
+      <if test="buyprice != null" >
+        buyPrice = #{buyprice,jdbcType=DECIMAL},
+      </if>
+      <if test="avgbuyprice != null" >
+        avgBuyPrice = #{avgbuyprice,jdbcType=DECIMAL},
+      </if>
+      <if test="saleprice != null" >
+        salePrice = #{saleprice,jdbcType=DECIMAL},
+      </if>
+      <if test="totalbuyprice != null" >
+        totalBuyPrice = #{totalbuyprice,jdbcType=DECIMAL},
+      </if>
+      <if test="totalsaleprice != null" >
+        totalSalePrice = #{totalsaleprice,jdbcType=DECIMAL},
+      </if>
+      <if test="updatime != null" >
+        updatime = #{updatime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="state != null" >
+        state = #{state,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lyyzoo.gpss.moder.LzStock" >
+    update lz_stock
+    set goodsId = #{goodsid,jdbcType=INTEGER},
+      repoId = #{repoid,jdbcType=INTEGER},
+      totalCount = #{totalcount,jdbcType=INTEGER},
+      saleCount = #{salecount,jdbcType=INTEGER},
+      buyPrice = #{buyprice,jdbcType=DECIMAL},
+      avgBuyPrice = #{avgbuyprice,jdbcType=DECIMAL},
+      salePrice = #{saleprice,jdbcType=DECIMAL},
+      totalBuyPrice = #{totalbuyprice,jdbcType=DECIMAL},
+      totalSalePrice = #{totalsaleprice,jdbcType=DECIMAL},
+      updatime = #{updatime,jdbcType=TIMESTAMP},
+      state = #{state,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/lyyzoo/gpss/mapper/LzBaseEmployeeMapper.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/lyyzoo/gpss/mapper/LzBaseGoodsMapper.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/lyyzoo/gpss/mapper/LzBaseParamMapper.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/lyyzoo/gpss/mapper/LzBaseRepoMapper.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/lyyzoo/gpss/mapper/LzPurchaseOrderMapper.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/lyyzoo/gpss/mapper/LzPurchaseSupplierMapper.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/lyyzoo/gpss/mapper/LzSaleCustomerMapper.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/lyyzoo/gpss/mapper/LzSaleOrderMapper.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/lyyzoo/gpss/mapper/LzStockMapper.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/lyyzoo/gpss/mapper/LzSysMenuMapper.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/lyyzoo/gpss/mapper/LzSysRoleMapper.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/lyyzoo/gpss/mapper/LzSysUserMapper.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/lyyzoo/gpss/moder/LzBaseEmployee.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/lyyzoo/gpss/moder/LzBaseGoods.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/lyyzoo/gpss/moder/LzBaseParam.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/lyyzoo/gpss/moder/LzBaseRepo.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/lyyzoo/gpss/moder/LzPurchaseOrder.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/lyyzoo/gpss/moder/LzPurchaseSupplier.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/lyyzoo/gpss/moder/LzSaleCustomer.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/lyyzoo/gpss/moder/LzSaleOrder.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/lyyzoo/gpss/moder/LzStock.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/lyyzoo/gpss/moder/LzSysMenu.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/lyyzoo/gpss/moder/LzSysRole.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/lyyzoo/gpss/moder/LzSysUser.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/mapper/LzBaseEmployeeMapper.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/mapper/LzBaseGoodsMapper.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/mapper/LzBaseParamMapper.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/mapper/LzBaseRepoMapper.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/mapper/LzPurchaseOrderMapper.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/mapper/LzPurchaseSupplierMapper.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/mapper/LzSaleCustomerMapper.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/mapper/LzSaleOrderMapper.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/mapper/LzStockMapper.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/mapper/LzSysMenuMapper.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/mapper/LzSysRoleMapper.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/mapper/LzSysUserMapper.xml" charset="GBK" />
+  </component>
+</project>

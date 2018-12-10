@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lyyzoo.gpss.mapper.LzBaseGoodsMapper" >
+  <resultMap id="BaseResultMap" type="com.lyyzoo.gpss.moder.LzBaseGoods" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="code" property="code" jdbcType="VARCHAR" />
+    <result column="type" property="type" jdbcType="VARCHAR" />
+    <result column="brand" property="brand" jdbcType="VARCHAR" />
+    <result column="unit" property="unit" jdbcType="VARCHAR" />
+    <result column="color" property="color" jdbcType="VARCHAR" />
+    <result column="standard" property="standard" jdbcType="VARCHAR" />
+    <result column="material" property="material" jdbcType="VARCHAR" />
+    <result column="buyPrice" property="buyprice" jdbcType="VARCHAR" />
+    <result column="salePrice" property="saleprice" jdbcType="VARCHAR" />
+    <result column="descs" property="descs" jdbcType="VARCHAR" />
+    <result column="updater" property="updater" jdbcType="VARCHAR" />
+    <result column="updatime" property="updatime" jdbcType="TIMESTAMP" />
+    <result column="state" property="state" jdbcType="INTEGER" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.lyyzoo.gpss.moder.LzBaseGoods" extends="BaseResultMap" >
+    <result column="picture" property="picture" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, name, code, type, brand, unit, color, standard, material, buyPrice, salePrice, 
+    descs, updater, updatime, state
+  </sql>
+  <sql id="Blob_Column_List" >
+    picture
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from lz_base_goods
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from lz_base_goods
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.lyyzoo.gpss.moder.LzBaseGoods" >
+    insert into lz_base_goods (id, name, code, 
+      type, brand, unit, 
+      color, standard, material, 
+      buyPrice, salePrice, descs, 
+      updater, updatime, state, 
+      picture)
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{code,jdbcType=VARCHAR}, 
+      #{type,jdbcType=VARCHAR}, #{brand,jdbcType=VARCHAR}, #{unit,jdbcType=VARCHAR}, 
+      #{color,jdbcType=VARCHAR}, #{standard,jdbcType=VARCHAR}, #{material,jdbcType=VARCHAR}, 
+      #{buyprice,jdbcType=VARCHAR}, #{saleprice,jdbcType=VARCHAR}, #{descs,jdbcType=VARCHAR}, 
+      #{updater,jdbcType=VARCHAR}, #{updatime,jdbcType=TIMESTAMP}, #{state,jdbcType=INTEGER}, 
+      #{picture,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lyyzoo.gpss.moder.LzBaseGoods" >
+    insert into lz_base_goods
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="code != null" >
+        code,
+      </if>
+      <if test="type != null" >
+        type,
+      </if>
+      <if test="brand != null" >
+        brand,
+      </if>
+      <if test="unit != null" >
+        unit,
+      </if>
+      <if test="color != null" >
+        color,
+      </if>
+      <if test="standard != null" >
+        standard,
+      </if>
+      <if test="material != null" >
+        material,
+      </if>
+      <if test="buyprice != null" >
+        buyPrice,
+      </if>
+      <if test="saleprice != null" >
+        salePrice,
+      </if>
+      <if test="descs != null" >
+        descs,
+      </if>
+      <if test="updater != null" >
+        updater,
+      </if>
+      <if test="updatime != null" >
+        updatime,
+      </if>
+      <if test="state != null" >
+        state,
+      </if>
+      <if test="picture != null" >
+        picture,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="code != null" >
+        #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="brand != null" >
+        #{brand,jdbcType=VARCHAR},
+      </if>
+      <if test="unit != null" >
+        #{unit,jdbcType=VARCHAR},
+      </if>
+      <if test="color != null" >
+        #{color,jdbcType=VARCHAR},
+      </if>
+      <if test="standard != null" >
+        #{standard,jdbcType=VARCHAR},
+      </if>
+      <if test="material != null" >
+        #{material,jdbcType=VARCHAR},
+      </if>
+      <if test="buyprice != null" >
+        #{buyprice,jdbcType=VARCHAR},
+      </if>
+      <if test="saleprice != null" >
+        #{saleprice,jdbcType=VARCHAR},
+      </if>
+      <if test="descs != null" >
+        #{descs,jdbcType=VARCHAR},
+      </if>
+      <if test="updater != null" >
+        #{updater,jdbcType=VARCHAR},
+      </if>
+      <if test="updatime != null" >
+        #{updatime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="state != null" >
+        #{state,jdbcType=INTEGER},
+      </if>
+      <if test="picture != null" >
+        #{picture,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lyyzoo.gpss.moder.LzBaseGoods" >
+    update lz_base_goods
+    <set >
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="code != null" >
+        code = #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        type = #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="brand != null" >
+        brand = #{brand,jdbcType=VARCHAR},
+      </if>
+      <if test="unit != null" >
+        unit = #{unit,jdbcType=VARCHAR},
+      </if>
+      <if test="color != null" >
+        color = #{color,jdbcType=VARCHAR},
+      </if>
+      <if test="standard != null" >
+        standard = #{standard,jdbcType=VARCHAR},
+      </if>
+      <if test="material != null" >
+        material = #{material,jdbcType=VARCHAR},
+      </if>
+      <if test="buyprice != null" >
+        buyPrice = #{buyprice,jdbcType=VARCHAR},
+      </if>
+      <if test="saleprice != null" >
+        salePrice = #{saleprice,jdbcType=VARCHAR},
+      </if>
+      <if test="descs != null" >
+        descs = #{descs,jdbcType=VARCHAR},
+      </if>
+      <if test="updater != null" >
+        updater = #{updater,jdbcType=VARCHAR},
+      </if>
+      <if test="updatime != null" >
+        updatime = #{updatime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="state != null" >
+        state = #{state,jdbcType=INTEGER},
+      </if>
+      <if test="picture != null" >
+        picture = #{picture,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.lyyzoo.gpss.moder.LzBaseGoods" >
+    update lz_base_goods
+    set name = #{name,jdbcType=VARCHAR},
+      code = #{code,jdbcType=VARCHAR},
+      type = #{type,jdbcType=VARCHAR},
+      brand = #{brand,jdbcType=VARCHAR},
+      unit = #{unit,jdbcType=VARCHAR},
+      color = #{color,jdbcType=VARCHAR},
+      standard = #{standard,jdbcType=VARCHAR},
+      material = #{material,jdbcType=VARCHAR},
+      buyPrice = #{buyprice,jdbcType=VARCHAR},
+      salePrice = #{saleprice,jdbcType=VARCHAR},
+      descs = #{descs,jdbcType=VARCHAR},
+      updater = #{updater,jdbcType=VARCHAR},
+      updatime = #{updatime,jdbcType=TIMESTAMP},
+      state = #{state,jdbcType=INTEGER},
+      picture = #{picture,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lyyzoo.gpss.moder.LzBaseGoods" >
+    update lz_base_goods
+    set name = #{name,jdbcType=VARCHAR},
+      code = #{code,jdbcType=VARCHAR},
+      type = #{type,jdbcType=VARCHAR},
+      brand = #{brand,jdbcType=VARCHAR},
+      unit = #{unit,jdbcType=VARCHAR},
+      color = #{color,jdbcType=VARCHAR},
+      standard = #{standard,jdbcType=VARCHAR},
+      material = #{material,jdbcType=VARCHAR},
+      buyPrice = #{buyprice,jdbcType=VARCHAR},
+      salePrice = #{saleprice,jdbcType=VARCHAR},
+      descs = #{descs,jdbcType=VARCHAR},
+      updater = #{updater,jdbcType=VARCHAR},
+      updatime = #{updatime,jdbcType=TIMESTAMP},
+      state = #{state,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

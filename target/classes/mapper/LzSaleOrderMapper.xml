@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lyyzoo.gpss.mapper.LzSaleOrderMapper" >
+  <resultMap id="BaseResultMap" type="com.lyyzoo.gpss.moder.LzSaleOrder" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="goodsId" property="goodsid" jdbcType="INTEGER" />
+    <result column="customerId" property="customerid" jdbcType="INTEGER" />
+    <result column="customerName" property="customername" jdbcType="VARCHAR" />
+    <result column="repoId" property="repoid" jdbcType="INTEGER" />
+    <result column="orderNumber" property="ordernumber" jdbcType="VARCHAR" />
+    <result column="count" property="count" jdbcType="INTEGER" />
+    <result column="unitPrice" property="unitprice" jdbcType="DECIMAL" />
+    <result column="totalPrice" property="totalprice" jdbcType="DECIMAL" />
+    <result column="employeeId" property="employeeid" jdbcType="INTEGER" />
+    <result column="descs" property="descs" jdbcType="VARCHAR" />
+    <result column="checkState" property="checkstate" jdbcType="INTEGER" />
+    <result column="checkResult" property="checkresult" jdbcType="VARCHAR" />
+    <result column="checkAccount" property="checkaccount" jdbcType="VARCHAR" />
+    <result column="checktime" property="checktime" jdbcType="TIMESTAMP" />
+    <result column="taketime" property="taketime" jdbcType="TIMESTAMP" />
+    <result column="creater" property="creater" jdbcType="VARCHAR" />
+    <result column="creatime" property="creatime" jdbcType="TIMESTAMP" />
+    <result column="updater" property="updater" jdbcType="VARCHAR" />
+    <result column="updatime" property="updatime" jdbcType="TIMESTAMP" />
+    <result column="state" property="state" jdbcType="INTEGER" />
+    <result column="type" property="type" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, goodsId, customerId, customerName, repoId, orderNumber, count, unitPrice, totalPrice, 
+    employeeId, descs, checkState, checkResult, checkAccount, checktime, taketime, creater, 
+    creatime, updater, updatime, state, type
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from lz_sale_order
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from lz_sale_order
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.lyyzoo.gpss.moder.LzSaleOrder" >
+    insert into lz_sale_order (id, goodsId, customerId, 
+      customerName, repoId, orderNumber, 
+      count, unitPrice, totalPrice, 
+      employeeId, descs, checkState, 
+      checkResult, checkAccount, checktime, 
+      taketime, creater, creatime, 
+      updater, updatime, state, 
+      type)
+    values (#{id,jdbcType=INTEGER}, #{goodsid,jdbcType=INTEGER}, #{customerid,jdbcType=INTEGER}, 
+      #{customername,jdbcType=VARCHAR}, #{repoid,jdbcType=INTEGER}, #{ordernumber,jdbcType=VARCHAR}, 
+      #{count,jdbcType=INTEGER}, #{unitprice,jdbcType=DECIMAL}, #{totalprice,jdbcType=DECIMAL}, 
+      #{employeeid,jdbcType=INTEGER}, #{descs,jdbcType=VARCHAR}, #{checkstate,jdbcType=INTEGER}, 
+      #{checkresult,jdbcType=VARCHAR}, #{checkaccount,jdbcType=VARCHAR}, #{checktime,jdbcType=TIMESTAMP}, 
+      #{taketime,jdbcType=TIMESTAMP}, #{creater,jdbcType=VARCHAR}, #{creatime,jdbcType=TIMESTAMP}, 
+      #{updater,jdbcType=VARCHAR}, #{updatime,jdbcType=TIMESTAMP}, #{state,jdbcType=INTEGER}, 
+      #{type,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lyyzoo.gpss.moder.LzSaleOrder" >
+    insert into lz_sale_order
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="goodsid != null" >
+        goodsId,
+      </if>
+      <if test="customerid != null" >
+        customerId,
+      </if>
+      <if test="customername != null" >
+        customerName,
+      </if>
+      <if test="repoid != null" >
+        repoId,
+      </if>
+      <if test="ordernumber != null" >
+        orderNumber,
+      </if>
+      <if test="count != null" >
+        count,
+      </if>
+      <if test="unitprice != null" >
+        unitPrice,
+      </if>
+      <if test="totalprice != null" >
+        totalPrice,
+      </if>
+      <if test="employeeid != null" >
+        employeeId,
+      </if>
+      <if test="descs != null" >
+        descs,
+      </if>
+      <if test="checkstate != null" >
+        checkState,
+      </if>
+      <if test="checkresult != null" >
+        checkResult,
+      </if>
+      <if test="checkaccount != null" >
+        checkAccount,
+      </if>
+      <if test="checktime != null" >
+        checktime,
+      </if>
+      <if test="taketime != null" >
+        taketime,
+      </if>
+      <if test="creater != null" >
+        creater,
+      </if>
+      <if test="creatime != null" >
+        creatime,
+      </if>
+      <if test="updater != null" >
+        updater,
+      </if>
+      <if test="updatime != null" >
+        updatime,
+      </if>
+      <if test="state != null" >
+        state,
+      </if>
+      <if test="type != null" >
+        type,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="goodsid != null" >
+        #{goodsid,jdbcType=INTEGER},
+      </if>
+      <if test="customerid != null" >
+        #{customerid,jdbcType=INTEGER},
+      </if>
+      <if test="customername != null" >
+        #{customername,jdbcType=VARCHAR},
+      </if>
+      <if test="repoid != null" >
+        #{repoid,jdbcType=INTEGER},
+      </if>
+      <if test="ordernumber != null" >
+        #{ordernumber,jdbcType=VARCHAR},
+      </if>
+      <if test="count != null" >
+        #{count,jdbcType=INTEGER},
+      </if>
+      <if test="unitprice != null" >
+        #{unitprice,jdbcType=DECIMAL},
+      </if>
+      <if test="totalprice != null" >
+        #{totalprice,jdbcType=DECIMAL},
+      </if>
+      <if test="employeeid != null" >
+        #{employeeid,jdbcType=INTEGER},
+      </if>
+      <if test="descs != null" >
+        #{descs,jdbcType=VARCHAR},
+      </if>
+      <if test="checkstate != null" >
+        #{checkstate,jdbcType=INTEGER},
+      </if>
+      <if test="checkresult != null" >
+        #{checkresult,jdbcType=VARCHAR},
+      </if>
+      <if test="checkaccount != null" >
+        #{checkaccount,jdbcType=VARCHAR},
+      </if>
+      <if test="checktime != null" >
+        #{checktime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="taketime != null" >
+        #{taketime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="creater != null" >
+        #{creater,jdbcType=VARCHAR},
+      </if>
+      <if test="creatime != null" >
+        #{creatime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updater != null" >
+        #{updater,jdbcType=VARCHAR},
+      </if>
+      <if test="updatime != null" >
+        #{updatime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="state != null" >
+        #{state,jdbcType=INTEGER},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lyyzoo.gpss.moder.LzSaleOrder" >
+    update lz_sale_order
+    <set >
+      <if test="goodsid != null" >
+        goodsId = #{goodsid,jdbcType=INTEGER},
+      </if>
+      <if test="customerid != null" >
+        customerId = #{customerid,jdbcType=INTEGER},
+      </if>
+      <if test="customername != null" >
+        customerName = #{customername,jdbcType=VARCHAR},
+      </if>
+      <if test="repoid != null" >
+        repoId = #{repoid,jdbcType=INTEGER},
+      </if>
+      <if test="ordernumber != null" >
+        orderNumber = #{ordernumber,jdbcType=VARCHAR},
+      </if>
+      <if test="count != null" >
+        count = #{count,jdbcType=INTEGER},
+      </if>
+      <if test="unitprice != null" >
+        unitPrice = #{unitprice,jdbcType=DECIMAL},
+      </if>
+      <if test="totalprice != null" >
+        totalPrice = #{totalprice,jdbcType=DECIMAL},
+      </if>
+      <if test="employeeid != null" >
+        employeeId = #{employeeid,jdbcType=INTEGER},
+      </if>
+      <if test="descs != null" >
+        descs = #{descs,jdbcType=VARCHAR},
+      </if>
+      <if test="checkstate != null" >
+        checkState = #{checkstate,jdbcType=INTEGER},
+      </if>
+      <if test="checkresult != null" >
+        checkResult = #{checkresult,jdbcType=VARCHAR},
+      </if>
+      <if test="checkaccount != null" >
+        checkAccount = #{checkaccount,jdbcType=VARCHAR},
+      </if>
+      <if test="checktime != null" >
+        checktime = #{checktime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="taketime != null" >
+        taketime = #{taketime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="creater != null" >
+        creater = #{creater,jdbcType=VARCHAR},
+      </if>
+      <if test="creatime != null" >
+        creatime = #{creatime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updater != null" >
+        updater = #{updater,jdbcType=VARCHAR},
+      </if>
+      <if test="updatime != null" >
+        updatime = #{updatime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="state != null" >
+        state = #{state,jdbcType=INTEGER},
+      </if>
+      <if test="type != null" >
+        type = #{type,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lyyzoo.gpss.moder.LzSaleOrder" >
+    update lz_sale_order
+    set goodsId = #{goodsid,jdbcType=INTEGER},
+      customerId = #{customerid,jdbcType=INTEGER},
+      customerName = #{customername,jdbcType=VARCHAR},
+      repoId = #{repoid,jdbcType=INTEGER},
+      orderNumber = #{ordernumber,jdbcType=VARCHAR},
+      count = #{count,jdbcType=INTEGER},
+      unitPrice = #{unitprice,jdbcType=DECIMAL},
+      totalPrice = #{totalprice,jdbcType=DECIMAL},
+      employeeId = #{employeeid,jdbcType=INTEGER},
+      descs = #{descs,jdbcType=VARCHAR},
+      checkState = #{checkstate,jdbcType=INTEGER},
+      checkResult = #{checkresult,jdbcType=VARCHAR},
+      checkAccount = #{checkaccount,jdbcType=VARCHAR},
+      checktime = #{checktime,jdbcType=TIMESTAMP},
+      taketime = #{taketime,jdbcType=TIMESTAMP},
+      creater = #{creater,jdbcType=VARCHAR},
+      creatime = #{creatime,jdbcType=TIMESTAMP},
+      updater = #{updater,jdbcType=VARCHAR},
+      updatime = #{updatime,jdbcType=TIMESTAMP},
+      state = #{state,jdbcType=INTEGER},
+      type = #{type,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
