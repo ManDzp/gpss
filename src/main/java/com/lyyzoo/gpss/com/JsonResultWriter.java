@@ -12,9 +12,9 @@ public class JsonResultWriter {
 	 * @param object
 	 * @throws IOException
 	 */
-	
+
 	public static void writer(HttpServletResponse response,Object object) throws IOException {
-		
+
 		Gson gson=new Gson();
 		String json=gson.toJson(object);
 //		4����Ӧ���ݵ����ͺͱ���
@@ -23,7 +23,7 @@ public class JsonResultWriter {
 //		5��
 		response.getWriter().print(json);
 		response.getWriter().close();
-		
+
 	}
 
 }

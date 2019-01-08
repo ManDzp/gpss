@@ -15,11 +15,11 @@
     <result column="lockTime" property="locktime" jdbcType="TIMESTAMP" />
   </resultMap>
   <sql id="Base_Column_List" >
-    id, account, password, roleId, roleName, employeeId, updater, updatime, state, isLocked, 
+    id, account, password, roleId, roleName, employeeId, updater, updatime, state, isLocked,
     lockTime
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
-    select 
+    select
     <include refid="Base_Column_List" />
     from lz_sys_user
     where id = #{id,jdbcType=INTEGER}
@@ -29,13 +29,13 @@
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.lyyzoo.gpss.moder.LzSysUser" >
-    insert into lz_sys_user (id, account, password, 
-      roleId, roleName, employeeId, 
-      updater, updatime, state, 
+    insert into lz_sys_user (id, account, password,
+      roleId, roleName, employeeId,
+      updater, updatime, state,
       isLocked, lockTime)
-    values (#{id,jdbcType=INTEGER}, #{account,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
-      #{roleid,jdbcType=INTEGER}, #{rolename,jdbcType=VARCHAR}, #{employeeid,jdbcType=INTEGER}, 
-      #{updater,jdbcType=VARCHAR}, #{updatime,jdbcType=TIMESTAMP}, #{state,jdbcType=INTEGER}, 
+    values (#{id,jdbcType=INTEGER}, #{account,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR},
+      #{roleid,jdbcType=INTEGER}, #{rolename,jdbcType=VARCHAR}, #{employeeid,jdbcType=INTEGER},
+      #{updater,jdbcType=VARCHAR}, #{updatime,jdbcType=TIMESTAMP}, #{state,jdbcType=INTEGER},
       #{islocked,jdbcType=INTEGER}, #{locktime,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.lyyzoo.gpss.moder.LzSysUser" >

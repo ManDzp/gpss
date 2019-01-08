@@ -6,7 +6,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
     <!-- 自动扫描的包名 -->
-    <context:component-scan base-package="com.lyyzoo.gpss.controller" ></context:component-scan>
+    <context:component-scan base-package="com.lyyzoo.gpss.control" ></context:component-scan>
     <!-- 默认的注解映射的支持 -->
     <mvc:annotation-driven />
 
@@ -18,15 +18,14 @@
         <property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
     </bean>
 
-
     <!-- 用于将对象转换为 JSON  -->
     <bean id="stringConverter"
           class="org.springframework.http.converter.StringHttpMessageConverter">
-    <property name="supportedMediaTypes">
-        <list>
-            <value>text/plain;charset=UTF-8</value>
-        </list>
-    </property>
+        <property name="supportedMediaTypes">
+            <list>
+                <value>text/plain;charset=UTF-8</value>
+            </list>
+        </property>
     </bean>
     <!-- api -->
     <bean id="jsonConverter"
@@ -51,13 +50,13 @@
         <!-- 定义默认的异常处理页面   error  表示的视图的名称  -->
         <property name="defaultErrorView" value="error"/>
         <!-- 自定义需要特殊处理的异常，这是重要点 -->
-      <!--  <property name="exceptionMappings">
-            <props>
-                <prop key="org.lanqiao.exception.CustomException">customError</prop>
-                <prop key="org.lanqiao.exception.OrderException">orderError</prop>
-            </props>
-            &lt;!&ndash; 还可以定义其他的自定义异常 &ndash;&gt;
-        </property>-->
+        <!--  <property name="exceptionMappings">
+              <props>
+                  <prop key="org.lanqiao.exception.CustomException">customError</prop>
+                  <prop key="org.lanqiao.exception.OrderException">orderError</prop>
+              </props>
+              &lt;!&ndash; 还可以定义其他的自定义异常 &ndash;&gt;
+          </property>-->
         <!-- 省略日志-->
     </bean>
     <!--拦截器的 配置文件-->

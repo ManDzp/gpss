@@ -7,7 +7,7 @@
   <!--顺序问题-->
   <context-param>
     <param-name> contextConfigLocation </param-name>
-    <param-value> classpath:ApplicationContext.xml </param-value>
+    <param-value>classpath:applicationContext.xml</param-value>
   </context-param>
 
   <!-- 加载log4j配置文件 -->
@@ -60,10 +60,6 @@
     <url-pattern>/</url-pattern>
   </servlet-mapping>
 
-  <!--添加404错误处理页面-->
-  <error-page>
-    <error-code>404</error-code>
-    <location>/ErrorPage/error.jsp</location>
-  </error-page>
+
 
 </web-app>
